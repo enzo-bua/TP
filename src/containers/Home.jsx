@@ -1,8 +1,13 @@
 import jsonBooks from '../jsonBooks'
 import Products from '../components/Products'
+import Buscador from '../components/Buscador'
+import React from 'react'
 function Home() {
   return (
-      <Products products={jsonBooks} />
+      <React.Fragment>
+        <Buscador/>
+        <Products products={jsonBooks} />
+      </React.Fragment>
     )
 }
 

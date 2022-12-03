@@ -1,13 +1,14 @@
 .card{
-    width: 200px;
+    width: 250px;
     height: 335px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     margin: 20px;
-    text-align: center;
     transform: all 0.25s;
-    background-color: #9ea5a5;
+    background-color: #d0d6d6;
     margin-top: 70px;
+    color: #000;
+    white-space: nowrap;
 
 }
 
@@ -54,50 +55,64 @@
 }
 
 .img{
-    width: 55%;
+    width: 200px;
+    height: 200px;
     margin-top: 15px ;
-    margin-left:24%;
+    margin-left: 10%;
+
+    object-fit: cover;
     
 }
 
+.but {
+    margin-top: -10px;
+    margin-left: 20px;
+}
+
+.but-ver{
+    background-color: #6eaadf;
+    margin-top: -10px;
+    margin-left: 20px;
+}
+
+.but-ver:hover{
+    background-color: #3e5267;
+
+}
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
+
 .data .name{
-    font-size: 1.1em;
+    font-size: 0.9em;
+    margin-left: 10px;
+    margin-top: 5px;
+    
 }
 
-.data .descripcion{
-    font-family: 'Inter';
-    font-style: normal;
-    margin-top: -15px;
-    font-size: 0.8em;
 
-}
 
 .data .precio{
     font-size: 1em;
-    margin-top: -5px;
     font-weight: bold;
+    margin-top: -20px;
+    margin-left: 10px;
+
 }
 
-.data .cuotas{
-    font-family: 'Inter';
-    font-style: normal;
-    color:#d5d5ea;
-    margin-top:-20px ;
+.data .autor {
+    margin-top: -15px;
+    margin-left: 5px;
     font-size: 0.8em;
 
 }
 
-.data a{
-    width: 55%;
-    height: 18%;
-    text-decoration: none;
-    margin-top: -30px;
-    font-size: 13px;
-    font-weight: bold;
-    background-color: #4481ad;
-}
 
-.data button:hover{
+
+
+
+.data .but:hover{
     background-color: #98cfff;
 }
 @media (max-width: 600px){

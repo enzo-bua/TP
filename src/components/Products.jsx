@@ -3,17 +3,17 @@ import Product from './Product'
 import AppContext from '../context/AppContext';
 import '../styles/Template.css'
 function Products() {
-  const {state, addToTemplate} = useContext(AppContext);
+  const {state, addToCart} = useContext(AppContext);
   const { products } = state;
 
-  const handleAddToTemplate = product => () =>{
-    addToTemplate(product)
+  const handleAddToCart = product => () =>{
+    addToCart(product)
   }
 
   return (
     <section className='book-container'>
       {products.map(product => (
-          <Product key={product.id} product={product} handleAddToTemplate={handleAddToTemplate} />
+          <Product key={product.isbn} product={product} handleAddToCart={handleAddToCart} />
         ))}
     </section>
   )

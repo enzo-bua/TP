@@ -17,11 +17,11 @@ const Header = () => {
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-        <Link className='enlace'><img className='logo' src={logo} alt="" /></Link> 
+        <Link to="/" className='enlace'><img className='logo' src={logo} alt="" /></Link> 
 
         <ul>
-            <li> <Link className="fs-6 fw-light Italic">HOME</Link> </li>
-            <li> <Link className="fs-6 fw-light Italic">NOVEDADES</Link> </li>
+          <li> <Link className="ps-5 ms-5 ">HOME</Link> </li>           
+           <li> <Link className="fs-6 fw-light Italic">NOVEDADES</Link> </li>
             <li> <Link className="fs-6 fw-light Italic">GENERO</Link> </li>
             <li> <Link className="fs-6 fw-light Italic">CATEGORIA</Link> </li>
             <li> <Link className="fs-6 fw-light Italic">OFERTA</Link> </li>
@@ -29,7 +29,7 @@ const Header = () => {
             <li className='other-button'> <Link className="fs-6 fw-bold">REGISTRASE</Link></li>
             <li> <Link className="fs-6 fw-bold">INGRESAR</Link></li>
             <li> <Link className="fs-6 fw-bold">FAVORITOS</Link></li>
-            <li> <Link><FaShoppingCart className={styles.iconAnimation}/></Link>{cart.length > 0 && <div className="Header-alert">{cart.length}</div>}</li>
+            <li> <Link to="/checkout"><FaShoppingCart className={styles.iconAnimation}/></Link>{cart.length > 0 && <p className="Header-alert">{cart.length}</p>}</li>
             <li> <Link><FaHouseUser className={`${styles.iconAnimation} ${styles.userMenuIn}`}/></Link></li>
         </ul>
 

@@ -11,19 +11,23 @@ nav{
 }
 .logo{
   height: 79px;
+  margin-left: -55px;
+  margin-top: -21px;
 }
-nav ul{
-  float: right;
-  margin-right: 70px;
-}
+
+
 li.other-button {
   margin-left: 20px;
 }
 nav ul li{
-  display: inline;
+  display: inline-block;
   line-height: 80px;
   margin: 0 5px;
   
+}
+.Header-alert {
+  color: #33b13a;
+  font-size: 14px;
 }
 nav ul li a{
   color: #fff; 

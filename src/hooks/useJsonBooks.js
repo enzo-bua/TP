@@ -3,21 +3,6 @@ import jsonBooks from "../jsonBooks";
 const useJsonBooks = () => {
     const [state, setState] = useState(jsonBooks)
 
-    const addToTemplate = payload => {
-        setState({
-            ...state,
-            template: [...state.template, payload]
-        })
-    }
-
-    const removeFromTemplate = payload => {
-        setState({
-            ...state,
-            template: state.template.filter(items => items.isbn != payload.isbn)
-        })
-    }
-
-
     const addToCart = payload => {
         setState({
             ...state,
@@ -28,7 +13,7 @@ const useJsonBooks = () => {
     const removeFromCart = payload => {
         setState({
             ...state,
-            cart: state.cart.filter(items => items.id != payload.id)
+            cart: state.cart.filter(items => items.isbn != payload.isbn)
         })
     }
 
@@ -47,13 +32,11 @@ const useJsonBooks = () => {
     }
     
     return {
-        addToTemplate,
-        removeFromTemplate,
         addToCart,
         removeFromCart,
         addToBuyer,
         addNewOrder,
-        state, 
+        state
     }
 }
 

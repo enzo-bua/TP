@@ -1,9 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout';
+import Checkout from './containers/Checkout';
 import Home from './containers/Home';
-import TemplateCompra from './containers/TemplateCompra';
 import AppContext from './context/AppContext'
 import useJsonBooks from './hooks/useJsonBooks'
+import Information from './containers/Information'
 
 function App() {
 
@@ -16,9 +17,8 @@ function App() {
         <Route path='/' element={<Home/>} />
         {/* <Route path='/login' element={} />
         <Route path='/checkin' element={} /> */}
-        <Route path='/templateCompra' element={<TemplateCompra/>} />
-        {/* <Route path='' element={} /> */}
-        {/* <Route path='' element={} /> */}
+        <Route path='/checkout' element={<Checkout/>} />
+        <Route path='/checkout/information' element={<Information/>} />
       </Routes>
     </AppContext.Provider>
     )
