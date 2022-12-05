@@ -1,3 +1,6 @@
+#root{
+    overflow: scroll;
+}
 ul {
     margin: 0;
     padding: 0 0 56px 0;
@@ -7,12 +10,13 @@ ul {
 .TodoItem {
     width: 50%;
     margin-left: 25%;
-    background-color: #FAFAFA;
+    background-color:white;
     position: relative;
     display: flex;
-    margin-top: 50px;
+    margin-top: 10px;
     box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
     border-radius: 2px;
+    
 }
 
 .TodoItem p {
@@ -20,6 +24,7 @@ ul {
     font-family: 'Inter';
     font-style: normal;
     margin-left: 10%;
+    color: black;
 }
 
 .icono{
@@ -28,6 +33,7 @@ ul {
     width: 48px;
     font-size: 24px;
     font-weight: bold;
+    color: black;
     /* background-color: #CCC; */
 }
 

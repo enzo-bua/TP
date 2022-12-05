@@ -1,6 +1,6 @@
 .card{
     width: 250px;
-    height: 335px;
+    height: 350px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     margin: 20px;
@@ -65,14 +65,17 @@
 }
 
 .but {
-    margin-top: -10px;
-    margin-left: 20px;
+    margin-top: -20px;
+    margin-left: 10px;
+    font-size: 0.9em;
 }
 
 .but-ver{
     background-color: #6eaadf;
-    margin-top: -10px;
-    margin-left: 20px;
+    margin-top: -20px;
+    margin-left: 10px;
+    font-size: 0.9em;
+
 }
 
 .but-ver:hover{
