@@ -5,22 +5,34 @@ import Home from './containers/Home';
 import AppContext from './context/AppContext'
 import useJsonBooks from './hooks/useJsonBooks'
 import Information from './containers/Information'
-
+import React from 'react';
+import AuthProvider from './login/Context/authContext';
+import Login from './login/Login';
 function App() {
 
   const jsonBooks = useJsonBooks();
 
   return (
-    <AppContext.Provider value={jsonBooks}>
-      <Layout/>
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        {/* <Route path='/login' element={} />
-        <Route path='/checkin' element={} /> */}
-        <Route path='/checkout' element={<Checkout/>} />
-        <Route path='/checkout/information' element={<Information/>} />
+    // <React.Fragment>
+    //         <AuthProvider>
+    //       <Routes>
+    //         <Route path="login" element={<Login/>}/>
+    //     </Routes>
+    //   </AuthProvider>
+
+     <AppContext.Provider value={jsonBooks}>
+       <AuthProvider>
+       <Layout/>
+       <Routes>
+         <Route path="login" element={<Login/>}/>
+         <Route path='/' element={<Home/>} />
+         <Route path='/checkout' element={<Checkout/>} />
+         <Route path='/checkout/information' element={<Information/>} />
+
       </Routes>
-    </AppContext.Provider>
+      </AuthProvider>
+    </AppContext.Provider> 
+
     )
 }
 
