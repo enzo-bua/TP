@@ -7,8 +7,7 @@ import Comentarios from './Comentarios';
 import ComentariosList from './ComentariosList';
 
 
-const TemplateCompra = (props, setOpenModal) => {
-  
+const TemplateCompra = (props) => {
   const localStorageCom = localStorage.getItem('COMEN_V1')
   let parsed; 
 
@@ -48,15 +47,20 @@ const TemplateCompra = (props, setOpenModal) => {
 
   //MODAL
   const onCancel = () =>{
-    setOpenModal(false);
+    props.setOpenModal(false);
   }
   
   return (
     <React.Fragment>
-      <div className='card-cont'>
+       <div className=''>
         <img className='imagen' src={props.thumbnailUrl}  alt="" />
         <div className='data-c'>
-            <p className='name'> <strong> {props.title}</strong> </p>
+        <button
+       className='btn'
+       type='button'
+       onClick={onCancel}
+      >Cerrar</button>
+            {/* <p className='name'> <strong> {props.title}</strong> </p> */}
             <Rating className='est' name="size-large" defaultValue={2} size="large" />
             <p className='precio'> {props.price} </p>
             <p className='autor'> {props.authors} </p>
@@ -70,7 +74,7 @@ const TemplateCompra = (props, setOpenModal) => {
         </div>  
       </div>
 
-        <div className='caracteristicas'>
+        {/*<div className='caracteristicas'>
           <h1>Caracteristicas</h1>
           <p>{props.shortDescription}</p>
         </div>
@@ -102,13 +106,9 @@ const TemplateCompra = (props, setOpenModal) => {
          {com.map(todo => (
           <Comentarios text={todo} key={todo}/>
          ))}
-        </ComentariosList> 
+        </ComentariosList>  */}
 
-      <button
-       className='btn'
-       type='button'
-       onClick={onCancel}
-      >Cerrar</button>
+     
         
     </React.Fragment>
   )

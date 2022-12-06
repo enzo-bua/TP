@@ -7,7 +7,6 @@ import TemplateCompra from '../containers/TemplateCompra'
 const Product = ({ product, handleAddToCart }) => {
  
   const [openModal, setOpenModal] = useState(false)
-
   const handleModal = () => {
     setOpenModal(prevState => !prevState)
   }
