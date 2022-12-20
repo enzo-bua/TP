@@ -22,7 +22,7 @@ const Checkout = () => {
   }
   
   return (
-    <div className='card-cont'>
+    <div className='card-content'>
       <div className="Checkout-content">
         {cart.length > 0 ? <h3>Lista de pedidos</h3> : <h3>Sin pedidos...</h3>}
         {cart.map((item) => (
@@ -35,7 +35,7 @@ const Checkout = () => {
               <span>${item.price}</span>
               </div>
             <button type="button" onClick={handleRemove(item)}>
-              <AiOutlineDelete/>
+              <AiOutlineDelete />
             </button>
           </div>
         ))}

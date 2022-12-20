@@ -1,20 +1,19 @@
-import React,{ useContext, useState } from 'react'
-import '../styles/Header.css'
-import { FaSearch } from 'react-icons/fa'
-
-import Product from './Product'
-import AppContext from '../context/AppContext';
+import React from 'react'
 import '../styles/Template.css'
-import Buscador from './Buscador';
-function Products() {
+import { useContext, useState } from 'react';
+import AppContext from '../context/AppContext';
+import Product from '../components/Product';
+import Buscador from '../components/Buscador'
+
+
+function Categoria() {
+  
   const {state, addToCart} = useContext(AppContext);
   const { products } = state;
 
   const handleAddToCart = product => () =>{
     addToCart(product)
-    
   }
-
   const [search, setSearch] = useState('')
 
 
@@ -38,7 +37,8 @@ function Products() {
         ))}
     </section>
   </React.Fragment>
+      
   )
 }
 
-export default Products
+export default Categoria

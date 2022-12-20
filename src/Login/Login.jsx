@@ -53,7 +53,7 @@ const Login = () => {
     }
 
     return ( 
-        <nav> 
+        
         <div id="contenedor">
             <div id="central">
                 <div id="login">
@@ -114,7 +114,6 @@ const Login = () => {
         </div>
         
             
-        </nav>
      );
 }
  

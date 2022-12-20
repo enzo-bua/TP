@@ -62,7 +62,7 @@ const Checkin = () => {
                             onChange={handelChange}
                             type="email" 
                             name="email" 
-                            placeholder="email" 
+                            placeholder="Email" 
                             required
                             />
                             

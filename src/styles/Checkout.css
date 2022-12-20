@@ -1,9 +1,9 @@
-.card-cont {
+.card-content {
   width: 80%;
-  height: 20%;
+  
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   text-align: center;
-  background-color: #9ea5a5;
+  background-color: #c9c9c9;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -14,7 +14,7 @@
 }
 
 .Checkout-content h3{
-  margin-left: 10px;
+  margin-left: 0px;
   font-style: italic;
 }
 
@@ -32,6 +32,9 @@
   outline: none;
   margin-left: 10px;
 }
+
+
+
 .Checkout-element {
   display: flex;
   justify-content: start;

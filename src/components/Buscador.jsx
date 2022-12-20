@@ -1,15 +1,21 @@
+import React from 'react'
 import '../styles/Header.css'
-import React from 'react';
 import { FaSearch } from 'react-icons/fa'
-const Buscador = () => {
-  return ( 
-        <li className="searchBar">
-          <input type="text" placeholder="Buscar..." />
-          <FaSearch className="searchBarIcon"/>
-        </li>
 
-    
-  );
+import '../styles/Template.css'
+
+function Buscador({ search, searcher }) {
+  return (
+    <li className="searchBar">
+    <input 
+      value={search}
+      onChange={searcher}
+      type="text" 
+      placeholder="Buscar..." 
+    />
+    <FaSearch className="searchBarIcon"/>
+  </li>
+  )
 }
- 
-export default Buscador;
+
+export default Buscador

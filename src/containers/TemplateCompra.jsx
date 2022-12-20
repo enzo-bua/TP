@@ -1,11 +1,11 @@
 import React from 'react'
 import '../styles/TemplateCompra.css'
 import Rating from '@mui/material/Rating';
-import {GoComment} from 'react-icons/go'
 import { useState } from 'react';
 import Comentarios from './Comentarios';
 import ComentariosList from './ComentariosList';
-
+import { FaRegCommentAlt } from 'react-icons/fa'
+import { AiOutlineClose } from 'react-icons/ai'
 
 const TemplateCompra = (props) => {
   const localStorageCom = localStorage.getItem('COMEN_V1')
@@ -52,64 +52,66 @@ const TemplateCompra = (props) => {
   
   return (
     <React.Fragment>
-       <div className=''>
-        <img className='imagen' src={props.thumbnailUrl}  alt="" />
-        <div className='data-c'>
-        <button
-       className='btn'
-       type='button'
-       onClick={onCancel}
-      >Cerrar</button>
-            {/* <p className='name'> <strong> {props.title}</strong> </p> */}
+      <div className='todo'>
+     
+        <AiOutlineClose
+        className='cerrar'
+          type='button'
+          onClick={onCancel}
+          >Regresar
+        </AiOutlineClose>
+     
+        <div className='container'>
+          <img className='imagen' src={props.thumbnailUrl}  alt="" />
+          <div className='data-c'>
+            <p className='name'> <strong> {props.title}</strong> </p>
             <Rating className='est' name="size-large" defaultValue={2} size="large" />
-            <p className='precio'> {props.price} </p>
+            <p className='precio'>$ {props.price} </p>
             <p className='autor'> {props.authors} </p>
             <a className='pago' href="">Ver formas de pago</a>            
+          </div>  
+      
+          <div className='caracteristicas'>
+            <h1>Caracteristicas </h1>
+            <p>{props.shortDescription}</p>
+          </div>
+        </div>
+ 
+        <div className='comentarios'>
+          <div className='com'>
+            <h2>Comentarios</h2>
+            <FaRegCommentAlt className='ic'/>
+            <textarea 
+            className='coments'
+            placeholder='Escriba su comentario...' 
+            onChange={onChange} value={comentarios}
+            type='text'
+            required
+            >  
+            </textarea>
+          </div>
+        <div>
+        <form onSubmit={onSumbite} className='boton'>
+          {error && <p className='error'>Por favor, ingrese un comentario</p>}
 
-          <form className='form'>
-            <input className='inp' type="text" placeholder='Codigo Postal' />
-            <button className='env'>Calcular</button>
-          </form>
-        
-        </div>  
+          <button 
+          className='btn btn-custom-color'
+          type='submit'
+          >
+            Enviar
+          </button>
+        </form>
+      </div>
+         
+          <ComentariosList>
+          {com.length > 0 && ( 
+          com.map(todo => (
+            <Comentarios text={props.comentarios} key={todo}/>
+          )))}
+          </ComentariosList> 
       </div>
 
-        {/*<div className='caracteristicas'>
-          <h1>Caracteristicas</h1>
-          <p>{props.shortDescription}</p>
-        </div>
-
-       <div className='comentarios'>
-          <h2>Comentarios</h2>
-          <textarea 
-           placeholder='Escriba su comentario...' 
-           onChange={onChange} value={comentarios}
-           type='text'
-           required
-          >  
-          </textarea>
-          <GoComment className='icon-comment'/>
-          <form onSubmit={onSumbite} className='botones'>
-          {error && <p className='error'>Por favor, ingrese un comenta</p>}
-
-            <button 
-             className='btn btn-custom-color'
-             type='submit'
-            >
-              Enviar
-            </button>
-          </form>
-        </div>
-
-  
-        <ComentariosList>
-         {com.map(todo => (
-          <Comentarios text={todo} key={todo}/>
-         ))}
-        </ComentariosList>  */}
-
-     
-        
+    </div>
     </React.Fragment>
   )
 }
