@@ -22,8 +22,7 @@ function Categoria() {
   }
 
 
-  const results = !search ? products : products.filter((dato)=> dato.title.toLowerCase().includes(search.toLocaleLowerCase()))
-
+  // const results = !search ? products : products.filter((dato)=> dato.title.toLowerCase().includes(search.toLocaleLowerCase()))
 
   return (
   <React.Fragment>
@@ -31,11 +30,13 @@ function Categoria() {
     search={search}
     searcher={searcher}
     />
+    <div>
     <section className='book-container'>
-      {results.map(product => (
-        <Product key={product.isbn} product={product} handleAddToCart={handleAddToCart} />
+      {products.map(product => (
+        product.categoria
         ))}
     </section>
+    </div>
   </React.Fragment>
       
   )

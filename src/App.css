@@ -2,7 +2,7 @@
   background-color: #dadada;
   margin:0px;  
   height:100vh;  
-  
+  overflow: scroll;
 }
 
 

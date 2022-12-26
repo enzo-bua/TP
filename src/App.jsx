@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom'
-import Header from './components/Header';
 import Checkout from './containers/Checkout';
 import Home from './containers/Home';
 import AppContext from './context/AppContext'
@@ -9,13 +8,10 @@ import React from 'react';
 import AuthProvider from './login/Context/authContext';
 import Login from './login/Login';
 import Checkin from './login/Checkin';
-import Novedades from './containers/Novedades'
-import Genero from './containers/Genero'
 import Categoria from './containers/Categoria'
-import Recomendados from './containers/Recomendados'
 import './App.css'
-import Oferta from './containers/Oferta';
-import Footer from './components/Footer';
+import Layout from './components/Layout';
+import Header from './components/Header';
 
 function App() {
 
@@ -23,17 +19,14 @@ function App() {
 
   return (
     <AppContext.Provider value={jsonBooks}>
-      
-      <AuthProvider>
 
-       <Header/>
+      {/* <Layout> */}
+      <AuthProvider>
        <Routes>
          <Route path='/' element={<Home/>} />
-         <Route path='/novedades' element={<Novedades/>} />
-         <Route path='/genero' element={<Genero/>} />
+
          <Route path='/categoria' element={<Categoria/>} />
-         <Route path='/recomendados' element={<Recomendados/>} />
-         <Route path='/oferta' element={<Oferta/>} />
+
 
          <Route path='/checkout' element={<Checkout/>} />
          <Route path='/checkout/information' element={<Information/>} />
@@ -47,7 +40,7 @@ function App() {
          <Route path="/checkin" element={<Checkin/>}/>
       </Routes>
       </AuthProvider>
-
+      {/* </Layout> */}
     </AppContext.Provider> 
 
     )

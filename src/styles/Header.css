@@ -4,20 +4,42 @@ nav{
   background: #475151;
   height: 80px;
   width: 100%;
+  position: absolute;
+  z-index: 1;
 }
 .enlace{
   position: absolute;
   padding: 20px 50px;
-}
-.logo{
-  height: 79px;
-  margin-left: -55px;
-  margin-top: -21px;
+  color: white;
+  font-family: 'Comic Sans MS' ;
+  font-weight: bold;
 }
 
+.checkbtn{
+  font-size: 30px;
+  color: #fff;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+
+
+li.other-ic {
+  margin-left: 5%;
+
+}
+
+.cat {
+  margin-left: 400px;
+}
 
 li.other-button {
-  margin-left: 20px;
+  margin-left: 20%;
 }
 nav ul li{
   display: inline-block;
@@ -106,6 +128,177 @@ section{
   cursor: pointer;
   animation: rotate-icons 1s;
 }
+
+@keyframes rotate-icons {
+  0% { 
+      transform: rotate(0deg);
+  }
+
+  40% {
+      transform: rotate(50deg);
+  }
+
+  80% {
+      transform: rotate(-50deg);
+  }
+
+  100% {
+      transform: rotate(0);
+  }
+}
+
+.b{
+  border-radius: 20px;
+}
+
+
+@media (max-width: 952px){
+  .enlace{
+      padding-left: 20px;
+  }
+  nav ul li a{
+      font-size: 16px;
+      padding: 5px 5px;
+  }
+  nav ul li {
+    margin: 0 0px;
+  }
+  li.other-button {
+    margin-left: 5%;
+  }
+  li.other-ic {
+    margin-left: 8%;
+  }
+  .cat {
+    margin-left: 1px;
+  }
+
+
+}
+
+
+@media (max-width: 858px){
+  .checkbtn{
+      display: block;
+  }
+  .searchBar input{
+    height: 30px;
+    position: relative;
+    margin-top: 15px;
+    margin-left: 20%;
+  }
+  ul{
+      position: fixed;
+      width: 50%;
+      height: 100vh;
+      background: #6e7a85;
+      top: 80px;
+      left: -100%;
+      margin-left: -50px;
+      text-align: center;
+      transition: all 1s;
+      z-index: 1;
+  }
+  nav ul li{
+      display: block;
+      margin: 10px;
+      line-height: 30px;
+  }
+  nav ul li a{
+      font-size: 20px;
+  }
+  li a:hover, li a.active{
+      background: none;
+      color: rgb(52, 43, 43);
+  }
+  #check:checked ~ ul{
+      left:0;
+  }
+}
+
+
+.Header-alert {
+  color: #a3ebff;
+  font-size: 10px;
+  margin-left: -8px;
+}
+
+li a.active, li a:hover{
+  background: #1068a8;
+  transition: .5s;
+  color: black;
+}
+
+
+
+.checkbtn{
+  font-size: 30px;
+  color: #fff;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+section{
+  background: url(fondo.jpg) no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: calc(100vh - 80px);
+}
+
+.searchBar {
+  position: relative;
+  cursor: pointer;
+  margin-left: 50px;
+  margin-top: 120px;
+}
+
+.searchBarIcon {
+  position: relative;
+  left: -25px;
+  top: -8px;
+}
+
+.searchBar input {
+  margin-left: 35%;
+  width: 40vw;
+  max-width: 400px;
+  height: 1.5rem;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid;
+  padding: 0 5px 0 25px;
+  color: rgb(150, 137, 137);
+  transition: border-color 0.2s;
+}
+
+
+
+
+.searchBar input:focus {
+  border-color: #5aa3c2;
+  z-index: 2;
+}
+
+.searchBar input::placeholder {
+  font-size: 0.9rem;
+  color: rgb(80, 70, 70);
+}
+
+.carrito {
+  width: 20px;
+  height: 20px;
+}
+.config {
+  width: 20px;
+  height: 20px;
+}
+
 
 @keyframes rotate-icons {
   0% { 

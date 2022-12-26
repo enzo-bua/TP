@@ -1,6 +1,5 @@
 import React,{ useContext, useState } from 'react'
 import '../styles/Header.css'
-import { FaSearch } from 'react-icons/fa'
 
 import Product from './Product'
 import AppContext from '../context/AppContext';
