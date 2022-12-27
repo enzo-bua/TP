@@ -11,7 +11,6 @@ import Checkin from './login/Checkin';
 import Categoria from './containers/Categoria'
 import './App.css'
 import Layout from './components/Layout';
-import Header from './components/Header';
 
 function App() {
 
@@ -20,7 +19,7 @@ function App() {
   return (
     <AppContext.Provider value={jsonBooks}>
 
-      {/* <Layout> */}
+      <Layout>
       <AuthProvider>
        <Routes>
          <Route path='/' element={<Home/>} />
@@ -40,7 +39,7 @@ function App() {
          <Route path="/checkin" element={<Checkin/>}/>
       </Routes>
       </AuthProvider>
-      {/* </Layout> */}
+      </Layout>
     </AppContext.Provider> 
 
     )

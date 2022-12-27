@@ -35,7 +35,7 @@ function Payment() {
     });
   
   return (
-    <div>Payment</div>
+    <div>Payment..</div>
     )
 }
 

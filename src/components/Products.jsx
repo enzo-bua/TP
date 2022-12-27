@@ -22,8 +22,7 @@ function Products() {
   }
 
 
-  const results = !search ? products : products.filter((dato)=> dato.title.toLowerCase().includes(search.toLocaleLowerCase()))
-
+  const results = !search ? products : products.filter((dato) => dato.title.toLowerCase().includes(search.toLocaleLowerCase()) || dato.authors.includes(search))
 
   return (
   <React.Fragment>

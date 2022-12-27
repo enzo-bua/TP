@@ -2,15 +2,13 @@ import '../styles/Login-Checkin.css'
 import { useState } from "react";
 import { useAuth } from './Context/authContext'
 import { useNavigate } from "react-router-dom";
-
 const Login = () => {
-
     
     const [user, setUser] = useState({
         email: '',
         password:'',
     })
-
+    const [reg, setReg] = useState('')
     const [error, setError] = useState('');
 
     const { login, loginWithGoogle, resetPassword } = useAuth() 
@@ -24,6 +22,7 @@ const Login = () => {
         e.preventDefault() 
         try {
             await login(user.email, user.password)
+            setReg(user.email)
             navigate('/')
         } catch (error) {
             if (error.code === 'auth/user-not-found') {
@@ -51,6 +50,19 @@ const Login = () => {
             setError('EMAIL NO ENCONTRADO')
         }
     }
+
+    // const borrar = async (e) => {
+    //     e.preventDefault() 
+    //     try {
+    //         await logout(user.email, user.password)
+    //         setReg('')
+    //         // navigate('/')
+    //     } catch (error) {
+    //         if (error.code === 'auth/user-not-found') {
+    //             setError('USUARIO NO ENCONTRADO')
+    //         }
+    //     }
+    // }
 
     return ( 
         

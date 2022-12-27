@@ -4,7 +4,7 @@
 }
 .todo {
     width: 100%;
-    margin-top: 20px;
+    margin-top: -500px;
 }
 
 .imagen {
@@ -86,7 +86,6 @@ margin-left: 100px
 .cerrar {
     width: 70px;
     height: 20px; 
-    margin-top: 110px;
 }
 
   
