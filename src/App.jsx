@@ -11,6 +11,9 @@ import Checkin from './login/Checkin';
 import Categoria from './containers/Categoria'
 import './App.css'
 import Layout from './components/Layout';
+import Index from './Administrador';
+import Productos from './Administrador/Productos';
+import Ventas from './Administrador/Ventas';
 
 function App() {
 
@@ -18,27 +21,31 @@ function App() {
 
   return (
     <AppContext.Provider value={jsonBooks}>
-
-      <Layout>
       <AuthProvider>
-       <Routes>
-         <Route path='/' element={<Home/>} />
-
-         <Route path='/categoria' element={<Categoria/>} />
-
-
-         <Route path='/checkout' element={<Checkout/>} />
-         <Route path='/checkout/information' element={<Information/>} />
+        <Routes>
+          <Route path='/admin' element={<Index/>} />
+          <Route path='/admin/productos' element={<Productos/>} />
+          <Route path='/admin/ventas' element={<Ventas/>} />
         </Routes>
-
       </AuthProvider>
+      <Layout>
+        <AuthProvider>
+          <Routes>
+            <Route path='/' element={<Home/>} />
+            <Route path='/categoria' element={<Categoria/>} />
 
-      <AuthProvider>
-      <Routes>
-         <Route path="/login" element={<Login/>}/>
-         <Route path="/checkin" element={<Checkin/>}/>
-      </Routes>
-      </AuthProvider>
+
+            <Route path='/checkout' element={<Checkout/>} />
+            <Route path='/checkout/information' element={<Information/>} />
+          </Routes>
+        </AuthProvider>
+
+        <AuthProvider>
+          <Routes>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/checkin" element={<Checkin/>}/>
+          </Routes>
+        </AuthProvider> 
       </Layout>
     </AppContext.Provider> 
 
